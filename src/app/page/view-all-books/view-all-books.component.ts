@@ -9,7 +9,7 @@ import {HttpClient} from "@angular/common/http"
 export class ViewAllBooksComponent implements OnInit {
 
   private  http;
-  public bookList:any;
+  public bookList:any=null;
 
     constructor(private httpClient:HttpClient){
       this.http=httpClient;
@@ -19,7 +19,7 @@ export class ViewAllBooksComponent implements OnInit {
 
   }
   loadBook(){
-    this.http.get("http://localhost/8080/book/grt-books").subscribe(data=>{
+    this.http.get("http://localhost:8080/book/get-books").subscribe(data=>{
       console.log(data);
     });
   }
